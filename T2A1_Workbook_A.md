@@ -164,7 +164,7 @@ The main aspect of confidentiality is ensuring that only authorized users are al
 
 <strong>Integrity:</strong>
 
-The goal of integrity is to keep information accurate and consistent, only allowing changes to be made by those that are authorized. Integrity is considered to be maintained when information remains intact and unchanged throughout its usage, storage and transmission. Integrity can be compromised in a multiple ways, the two most common being intentional and unintentional manipulation. Intentional manipulation includes an individual modifying data with malicious intent.  Unintentional manipulation includes an authorized user accidentally deleting or modifying important data.  Integrity can be maintained by only allowing personnel that are both authorized and experienced access to modify data.
+The goal of integrity is to keep information accurate and consistent, only allowing changes to be made by those that are authorized. Integrity is considered to be maintained when information remains intact and unchanged throughout its usage, storage and transmission. Integrity can be compromised in multiple ways, the two most common being intentional and unintentional manipulation. Intentional manipulation includes an individual modifying data with malicious intent.  Unintentional manipulation includes an authorized user accidentally deleting or modifying important data.  Integrity can be maintained by only allowing personnel that are both authorized and experienced access to modify data.
 
 <br>
 
@@ -200,6 +200,8 @@ In order to uphold the availability tier, it must be ensured that access to info
 
 ## Question 7: 	Discuss common methods of protecting information and data and how you would apply them to the project
 ---
+
+<br>
 
 *There are many common methods available to protect information and data for ACME Corporation.  Below is a list with descriptions of possible methods that could help secure ACME Corporations sensitive Data.*
 
@@ -272,7 +274,7 @@ The Privacy Act 1988 (Privacy Act) is what regulates how a user's personal infor
 
    <br>
 
-- <strong>Part Five:  Access to, and correction of, personal information</strong>
+- <strong>Part Five:  Access to, and Correction of, Personal Information</strong>
 
     12. Access to Personal Information
     13. Correction of Personal Information
@@ -292,23 +294,74 @@ Acme Corporation must manage all personal information in a transparent way.  Per
 
 <strong>Part Two: Collection of Personal Information</strong>
 
-Acme Corporation must take extreme caution when collecting personal information and ensure that all sensitive information is gathered with the consent of the user. When sensitive data is collected, ACME Corporation must notify the individual that the information ahs been collected and inform them why and whether it may be disclosed. In order to 
+Acme Corporation must take extreme caution when collecting personal information and ensure that all sensitive information is gathered with the consent of the user. When sensitive data is collected, ACME Corporation must notify the individual that the information ahs been collected and inform them why and whether it may be disclosed. 
 
  <br>
 
 <strong>Part Three: Dealing with Personal Information</strong>
 
+Acme Corporation must be diligent in the way it uses or discloses information as well. Personal information must be only used in ways that the users would expect, meaning that if information is gathered for one purpose, the user must consent for it to be used in a different way. ACME Corporation must also refrain from using personal information for direct marketing, unless permission is given by the user.
+
 <br>
 
 <strong>Part Four: Integrity of Personal Information</strong>
 
+ACME Corporation must take all necessary steps ensure the accuracy of user information. To achieve this, ACME Corporation  should remind their users to update personal information with every purchase, contact users to retrieve updated information, and consistently update their information so it is as complete and accurate as possible. 
+
 <br>
 
-- <strong>Part Five:  Access to, and correction of, personal information</strong>
+<strong>Part Five:  Access to, and Correction of, Personal Information</strong>
 
+ACME Corporation must ensure that users have access to their personal information that the company stores.  In order to be given access, their identities should be verified so proper verification measures should be in place.   Users must also be able to update or correct their personal information either by themselves, or through the help of a company representative. These measures will help ensure that all stored information is as safe and accurate as possible. 
+
+<br>
+
+<br>
 
 ## Question 9: 	Describe the structural aspects of the relational database model. Your description should include information about the structure in which data is stored and how relations are represented in that structure.
 ---
+
+*A Relational Database Model is a representation of how data is stored in Relational Databases. Relational Databases utilize tables that are made up of columns and rows to organize data.  This data can come in a variety of forms including strings, arrays, characters, booleans, integers, and varchar.*
+
+<br>
+
+<strong>Table Structure</strong>
+
+Data in the relational Database Model is typically stored across multiple tables.  These tables represents an entity and consists of data that is related in some way.  Each table is made up of one or more *columns* which are assigned a specific data type (ex: string, integer). Columns represent a set of values for a particular attribute. *Rows* in a database represent a data record.  Each row in a database represents a complete record of an item and is commonly referred to as a *tuple*. For example, a table containing data on Student Information may have columns that consist of STUDENT_ID, NAME, ADDRESS, AGE, and PHONE_NUMBER.  Each of these columns are assigned a different datatype so that they are all uniform. Each row in this table creates a complete record of each student, containing multiple types of data. (Example below)
+
+<br>
+
+
+### <strong>Student:</strong>
+
+|STUDENT_ID   	| NAME  	|  ADDRESS 	|  AGE 	|   PHONE_NUMBER	|
+|---	|---	|---	|---	|---	|
+|  1 	| Frank  	| Perth  	| 25  	|  555555555 	| 
+|  2 	| Jose  	| New York  	| 28  	|  666666666 	|
+|  3 	| Sandra  	| Perth 	| 21  	|  888888888 	|
+|  4 	| Dan 	| Boston 	| 32 	|  999999999 	|
+
+<br>
+
+A *relational schema* is a representation of the name of a relation with its attributes. In the case of the previous table, the relation schema would be STUDENT (Student_ID, NAME, ADDRESS, AGE and PHONE).  The purpose of a relational schema is to describe how data is structured within tables.
+
+<br>
+
+<strong>Primary and Foreign Keys</strong>
+
+*Primary keys* are used to ensure that data is unique in a specific column. In the example above, the primary key is Student_ID.  Primary keys cannot have repetition or be given NULL values.  The use of primary keys allows for information from one table to be linked to another table.  When a primary key from one table is used in another, it is considered a *foreign key*. A foreign key is a column in one table that represents a column in another table. In the example below, the primary key from the above Student table is used as a foreign key to link the two tables. 
+
+<br>
+
+### <strong>Classes:</strong>
+
+|STUDENT_ID   	| COURSE_NAME  	| 
+|---	|---	|
+|  1 	| Web Development 	|
+|  2 	| Web Development 	|
+|  4	| Web Development   	|
+|  3 	| Database Management	|
+|  4 	| Database Management	|
 
 <br>
 <br>
@@ -317,10 +370,59 @@ Acme Corporation must take extreme caution when collecting personal information 
 ---
 
 <br>
+Data integrity in regards to a relational database is the accuracy, consistency, and completeness of data within the database. It also refers to the safety of the data within the database and the security and safety measures that are implemented to ensure that it remains accurate and complete. Data integrity is maintained through the use of rules, standards and processes that are often times implemented as early as the design phase.  There are four types of data integrity that must be enforced in a relational database tha include entity integrity, referential integrity, domain integrity, and user-defined integrity.  Below is an overview of each type.
+
+<br>
+
+<strong>Entity Integrity:</strong>
+
+This relies on the creation of primary keys to ensure that data within the database is not redundant and that none of the fields are null. This rule declares that every table should have its own primary key and that each key must be unique.
+
+<br>
+
+<strong>Referential Integrity:</strong>
+
+This relies on the concept of foreign keys to ensure that data is stored and used uniformly. The database's structure should have rules embedded that regarding how foreign keys are utilized to ensure that appropriate data modifications occur, such as changes, deletions, or insertions. These rules may include constraints to 
+remove the possibility of duplicate data, guarantee data accuracy, and ensure data that doesn't apply is not entered.
+
+<br>
+
+<strong>Domain Integrity:</strong>
+
+This refers to the acceptable types of values a column in a database is able to contain. It includes constraints to ensure that only the proper/designated datatype is used in a particular column. For instance, if an Age(integer) is entered into a column that is supposed to only contain (Names)strings, an error should be given and prevent it from happening. 
+
+<br>
+
+<strong>User-defined Integrity:</strong>
+
+This refers to any rules or constraints that the user has created in order to fit their specific needs. Depending on the use-case, referential, domain integrity might not be enough to mee the companies needs, so they integrate their vary own integrity measures.
+
+<br>
 <br>
 
 ## Question 11: Describe the manipulative aspects of the relational database model. Your description should include information about the ways in which data is manipulated (added, removed, changed, and retrieved) in a relational database.
 ---
+
+<br>
+
+Manipulation of a database is typically done by a data manipulation language (DML).  Data manipulation languages are computer programming languages that allow for data to be added, removed, changed and retrieved. A common DML used for the manipulation of a relational database is Structured Query Language (SQL). SQL is comprised of data change statements which allow for the modification of stored data, but not the objects or the schema of the database. Below are examples of how data is added, removed, changed, and retrieved in a relational database using SQL. 
+
+<br>
+
+<strong>Adding Data:</strong>
+
+<br>
+
+<strong>Removing Data:</strong>
+
+<br>
+
+<strong>Changing Data:</strong>
+
+<br>
+
+<strong>Retrieving Data:</strong>
+
 
 <br>
 <br>
