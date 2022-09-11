@@ -334,7 +334,7 @@ Data in the relational Database Model is typically stored across multiple tables
 
 ### <strong>Student:</strong>
 
-|STUDENT_ID   	| NAME  	|  ADDRESS 	|  AGE 	|   PHONE_NUMBER	|
+|Student_ID   	| Name  	|  Address 	|  Age 	|   Phone_Number	|
 |---	|---	|---	|---	|---	|
 |  1 	| Frank  	| Perth  	| 25  	|  555555555 	| 
 |  2 	| Jose  	| New York  	| 28  	|  666666666 	|
@@ -343,7 +343,7 @@ Data in the relational Database Model is typically stored across multiple tables
 
 <br>
 
-A *relational schema* is a representation of the name of a relation with its attributes. In the case of the previous table, the relation schema would be STUDENT (Student_ID, NAME, ADDRESS, AGE and PHONE).  The purpose of a relational schema is to describe how data is structured within tables.
+A *relational schema* is a representation of the name of a relation with its attributes. In the case of the previous table, the relation schema would be STUDENT (Student_ID, Name, Address, Age and Phone_Number).  The purpose of a relational schema is to describe how data is structured within tables.
 
 <br>
 
@@ -355,7 +355,7 @@ A *relational schema* is a representation of the name of a relation with its att
 
 ### <strong>Classes:</strong>
 
-|STUDENT_ID   	| COURSE_NAME  	| 
+|Student_ID   	| Course_Name 	| 
 |---	|---	|
 |  1 	| Web Development 	|
 |  2 	| Web Development 	|
@@ -363,6 +363,7 @@ A *relational schema* is a representation of the name of a relation with its att
 |  3 	| Database Management	|
 |  4 	| Database Management	|
 
+(Typically, foreign keys would be used for the course names to avoid repetitive data.)
 <br>
 <br>
 
@@ -405,24 +406,119 @@ This refers to any rules or constraints that the user has created in order to fi
 
 <br>
 
-Manipulation of a database is typically done by a data manipulation language (DML).  Data manipulation languages are computer programming languages that allow for data to be added, removed, changed and retrieved. A common DML used for the manipulation of a relational database is Structured Query Language (SQL). SQL is comprised of data change statements which allow for the modification of stored data, but not the objects or the schema of the database. Below are examples of how data is added, removed, changed, and retrieved in a relational database using SQL. 
+Manipulation of a database is typically done by a data manipulation language (DML).  Data manipulation languages are computer programming languages that allow for data to be added, removed, changed and retrieved. A common DML used for the manipulation of a relational database is Structured Query Language (SQL). SQL is comprised of data change statements which allow for the modification of stored data, but not the objects or the schema of the database. Below are examples of how data is added, removed, changed, and retrieved in a relational database using SQL. The table below will be used as a starting point for each modification. 
 
 <br>
 
+### <strong>students</strong>
+
+|Student_ID   	| Name  	|  Address 	|  Age 	|   Phone_Number	|
+|---	|---	|---	|---	|---	|
+|  1 	| Frank  	| Perth  	| 25  	|  555555555 	| 
+|  2 	| Jose  	| New York  	| 28  	|  666666666 	|
+|  3 	| Sandra  	| Perth 	| 21  	|  888888888 	|
+|  4 	| Dan 	| Boston 	| 32 	|  999999999 	|
+
+<br>
+
+
+
 <strong>Adding Data:</strong>
+
+The INSERT statement is used to add new rows to table within a relational database. For every new row of data, a new INSERT statement must be created. The desired values to be entered must be separated by commas and need to be in the same order as the columns appear in the database. The syntax used to achieve this is as follows:
+
+    INSERT INTO table [(column [, column...])] VALUES (value [, value...]);
+
+If we want to add a new row to the table above, we would use the following statement:
+
+    INSERT INTO Students (STUDENT_ID,NAME,ADDRESS,AGE,PHONE_NUMBER) VALUES (5, 'Lisa', 'Houston', 40, 333333333);
+
+The outcome of the previous statement would be the following:
+
+<br>
+
+### <strong>Students</strong>
+
+|Student_ID   	| Name  	|  Address 	|  Age 	|   Phone_Number	|
+|---	|---	|---	|---	|---	|
+|  1 	| Frank  	| Perth  	| 25  	|  555555555 	| 
+|  2 	| Jose  	| New York  	| 28  	|  666666666 	|
+|  3 	| Sandra  	| Perth 	| 21  	|  888888888 	|
+|  4 	| Dan 	| Boston 	| 32 	|  999999999 	|
+|  5 	| Lisa	| Houston 	| 40 	|  333333333 	|
 
 <br>
 
 <strong>Removing Data:</strong>
 
+The DELETE statement is used to remove a row from a table within a relational database. A WHERE clause is used to specify which row will be deleted.  If the WHERE clause is not included, the all of the rows will be deleted from the table. The syntax used to achieve this is as follows: 
+
+    DELETE [FROM] table [WHERE condition];
+
+If we want to delete the row that we added previously with the INSERT statement, we would use the following statement:
+
+    DELETE FROM Students WHERE Name='Lisa';
+
+The outcome of the previous statement would be the following:
+
+<br>
+
+### <strong>Students</strong>
+
+|Student_ID   	| Name  	|  Address 	|  Age 	|   Phone_Number	|
+|---	|---	|---	|---	|---	|
+|  1 	| Frank  	| Perth  	| 25  	|  555555555 	| 
+|  2 	| Jose  	| New York  	| 28  	|  666666666 	|
+|  3 	| Sandra  	| Perth 	| 21  	|  888888888 	|
+|  4 	| Dan 	| Boston 	| 32 	|  999999999 	|
+
+<br>
 <br>
 
 <strong>Changing Data:</strong>
 
+The UPDATE statement is used to modify data within a table. Within the UPDATE statement, a SET clause is used to indicate the attribute that needs to be updated along with its value.  After the SET clause, a WHERE clause is used to specify the record that will be deleted.  If a WHERE clause is omitted, all of the records will be updated. The syntax used to achieve this is as follows: 
+
+    UPDATE table_name
+    SET column1 = value1, column2 = value2, ...
+    WHERE condition;
+
+If we wanted to change the name of Frank to Franklin and update his address to Sydney (previous table), we would use the following statement:
+
+    UPDATE Students
+    SET Name = 'Franklin', Address= 'Sydney'
+    WHERE Student_ID = 1;
+
+The outcome of the previous statement would be the following:
+
+### <strong>Students</strong>
+
+|Student_ID   	| Name  	|  Address 	|  Age 	|   Phone_Number	|
+|---	|---	|---	|---	|---	|
+|  1 	| Franklin  	| Sydney  	| 25  	|  555555555 	| 
+|  2 	| Jose  	| New York  	| 28  	|  666666666 	|
+|  3 	| Sandra  	| Perth 	| 21  	|  888888888 	|
+|  4 	| Dan 	| Boston 	| 32 	|  999999999 	|
 <br>
 
 <strong>Retrieving Data:</strong>
 
+The SELECT statement is used to retrieve data from a table within a database.  A FROM clause is used to specify which table the data will be retrieved from.  Following a FROM clause is a WHERE clause, which specifies the row. A SELECT statement can be used to retrieve specific columns of data as well as all of the columns. The syntax used to achieve this is as follows: 
+
+    SELECT Column1
+    FROM TableName;
+
+If we wanted to retrieve all of the data regarding Sandra in previous table, we would use the following statement:
+
+    SELECT *
+    FROM Students;
+    Where Name= 'Sandra';
+
+The outcome of the previous statement would be the following:
+
+|Student_ID   	| Name  	|  Address 	|  Age 	|   Phone_Number	|
+|---	|---	|---	|---	|---	|
+|  3 	| Sandra  	| Perth 	| 21  	|  888888888 	|
 
 <br>
 <br>
