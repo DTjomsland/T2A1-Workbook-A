@@ -598,13 +598,13 @@ The outcome of the previous statement would be the following:
 
 ### B. Describe the hardware used to host the app
 
-Up until completing its merge in 2020, Etsy ran on its own hardware infrastructure.  In that year they shifted from their nearly 2,000 on premises servers to using Google Cloud services.  Etsy utilizes Google Cloud's computing power and machine learning capabilities to host nearly 65 million items listed by etsy sellers. 
+Up until completing its merge in 2020, Etsy ran on its own hardware infrastructure.  In that year they shifted from their nearly 2,000 on premises servers to using Google Cloud services.  Etsy utilizes Google Cloud's computing power and machine learning capabilities to host nearly 65 million items listed by etsy sellers. Google Cloud offers a combination of physical hardware and virtual machines to its Google Cloud customers. 
    
 <br>
 
 ### C. Describe the interaction of technologies within the app
 
-Etsy utilizes quite a variety of languages and tech to create their web app.  The back-end is composed of Backbone, PHP, and  the JavaScript based framework JQuery, which is used for its event handling. For their servers, Etsy utilizes Apache, Nginix, as well as various Google Cloud Services and Amazon Web Services.  For the front-end. Etsy uses a mix of technologies.  For some client-side management, Etsy uses WordPress which integrates well with the PHP back-end.  However, most of the front-end is created with the React Framework.
+Etsy utilizes quite a variety of languages and tech to create their web app.  The back-end is composed of Backbone, PHP, and  the JavaScript based framework JQuery, which is used for its event handling. For their servers, Etsy utilizes Apache, Nginix, as well as various Google Cloud Services and Amazon Web Services.  For the front-end, Etsy uses a mix of technologies.  For some client-side management, Etsy uses WordPress which integrates well with the PHP back-end.  However, most of the front-end is created with the React framework paired with  HTML and CSS.
 
 
 <br>
@@ -626,7 +626,13 @@ The Etsy app makes extensive use of taxonomies and stores their structured data 
 
 ### E. Identify entities which must be tracked by the app 
   
-Entities that must be tracked by Etsy are buyer information (name, email, location, age), seller information(name, email, location, age), product listings, product information (product name, description, price, location), payment information(card number card expiry, card CVV, card type), reviews(score, description) and shipping information(address, phone number, email).
+There are countless entities that are tracked by Etsy, but at a basic level, entities that must be tracked are:
+- buyer information (name, email, location, age, phone number)
+- seller information (name, email, location, age phone number) 
+- product listing (product name, description, price, location) 
+- payment information(card number card expiry, card CVV, card type)
+- reviews(score, description) 
+- shipping information(address, phone number, email).  
 
 <br>
 
@@ -638,6 +644,7 @@ The relationships between the previously mentioned entities revolves around the 
 <br>
 
 ### G . Design a schema using an Entity Relationship Diagram (ERD) appropriate for the database of this website (assuming a relational database model)
+Link to GitHub if image fails to load: https://github.com/DTjomsland/T2A1-Workbook-A/blob/main/T2A1_Workbook_A.md
 
 ![](/images/dbrelation.PNG)
 ---
